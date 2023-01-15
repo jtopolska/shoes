@@ -61,9 +61,7 @@ function App() {
           const { id, image, title, price } = elem;
 
           return (
-            // підслушка закриває корзину, потім можна замінити сторінкою з заказом
             <MenuItem key={ id } sx={{ display: 'flex' } }
-            // onClick={handleMenuClose}
             >
               <img className='orderItem-img' src={ image } alt='Shoes' />
               <div className='orderItem-info'>
@@ -176,7 +174,6 @@ function App() {
                 aria-haspopup="true"
                 onClick={handleProfileMenuOpen}
       >
-        {/* додавала атрибут showZero, але він не працював, тому задала стейту значення null */}
         <StyledBadge badgeContent={ quantity } onClick={handleMenuClose} color="error">
           <p onClick={handleMenuClose} className="nav-p">КОРЗИНА</p>
         </StyledBadge>
@@ -235,7 +232,6 @@ function App() {
                               onClick={handleProfileMenuOpen}
                               color="inherit"
                   >
-                    {/* додавала атрибут showZero, але він не працював, тому задала стейту значення null */}
                     <StyledBadge badgeContent={ quantity } color="error">
                         <ShoppingCartRoundedIcon />
                     </StyledBadge>
