@@ -5,7 +5,6 @@ import { grey } from '@mui/material/colors';
 
 
 export default function MenWomenFilter({filter}) {
-  // константа theme не змінює колір тексту кнопки, але змінює дефолтний синій колір рамки на чорний
   const theme = createTheme({
       palette: {
           primary: {
