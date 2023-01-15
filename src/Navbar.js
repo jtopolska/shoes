@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import { AppBar, Box, Toolbar, IconButton, Typography, Badge, MenuItem, Menu, cardClasses } from '@mui/material';
+import { AppBar, Box, Toolbar, IconButton, Typography, Badge, MenuItem, Menu } from '@mui/material';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
@@ -8,21 +8,10 @@ import { Link } from 'react-router-dom';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
-      // right: -3,
       top: 13,
-    //   border: `2px solid ${theme.palette.background.paper}`,
       padding: '0 4px',
     },
   }));
-
-// const StyledMenu = styled(Menu)(({ theme }) => ({
-//     '& .MuiMenu-paper': {
-//     backgroundColor: `${theme.palette.grey[400]}`,
-//     top: 13,
-//     //   border: `2px solid ${theme.palette.background.paper}`,
-//     padding: '0 4px',
-//     }
-// }));
 
 export default function Navbar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -33,8 +22,6 @@ export default function Navbar(props) {
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
-    // console.log(anchorEl)
-    // props.basket();
   };
 
   const handleMobileMenuClose = () => {
@@ -94,38 +81,12 @@ export default function Navbar(props) {
               onClick={handleProfileMenuOpen}>
         <p onClick={handleMenuClose} className="nav-p">КОРЗИНА</p>
         </MenuItem>
-      {/* <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem> */}
       <MenuItem>
-        {/* <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton> */}
         <Link to="/howToChoose" className="mobile-link">
         <p onClick={handleMenuClose}>Как выбрать идеальную пару</p>
         </Link>
       </MenuItem>
       <MenuItem>
-        {/* <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton> */}
           <a onClick={handleMenuClose} className="mobile-link" href="index.html/#contacts">КОНТАКТЫ</a>
       </MenuItem>
       
@@ -146,23 +107,10 @@ export default function Navbar(props) {
                 JULIA TOPOLSKA
             </Typography>
             </Link>
-          {/* <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search> */}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
             <IconButton size="large" 
-            // aria-label="show 4 new mails"
              color="inherit">
-              {/* <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge> */}
                 <Link to="/howToChoose" className="link">
                     <Typography sx={{ fontFamily: 'Poiret One, cursive' }}>
                     Как выбрать идеальную пару
@@ -170,22 +118,16 @@ export default function Navbar(props) {
                 </Link>
             </IconButton>
             <IconButton size="large"
-                        // aria-label="show 17 new notifications"
                         color="inherit"
             >
-              {/* <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge> */}
-                    <Typography sx={{ fontFamily: 'Poiret One, cursive' }}>
-                      <a href="#contacts" className="link">
-                        КОНТАКТЫ
-                      </a>
-                    </Typography>
+                <Typography sx={{ fontFamily: 'Poiret One, cursive' }}>
+                  <a href="#contacts" className="link">
+                    КОНТАКТЫ
+                  </a>
+                </Typography>
             </IconButton>
             <IconButton size="large"
                         edge="end"
-                      //   aria-label="account of current user"
-                      // aria-label="order"
                         aria-controls={menuId}
                         aria-haspopup="true"
                         onClick={handleProfileMenuOpen}
@@ -194,31 +136,18 @@ export default function Navbar(props) {
             <StyledBadge badgeContent={4} color="error" showZero>
                 <ShoppingCartRoundedIcon />
             </StyledBadge>
-              {/* <AccountCircle /> */}
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
           <IconButton size="large"
                       edge="end"
                       color="inherit"
-                      // aria-label="open drawer"
                       aria-controls={mobileMenuId}
                       aria-haspopup="true"
                       onClick={handleMobileMenuOpen}
-                      // sx={{ mr: 1 }}
           >
             <MenuIcon />
           </IconButton>
-            {/* <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton> */}
           </Box>
         </Toolbar>
       </AppBar>
@@ -229,16 +158,3 @@ export default function Navbar(props) {
     </>
   );
 }
-
-
-
-
-
-
-// export function Navbar() {
-//     return (
-//         <>
-
-//         </>
-//     );
-// }
